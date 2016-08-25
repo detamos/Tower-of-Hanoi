@@ -1,0 +1,13 @@
+All the variables are declared
+Number of arguments 1
+The values of enums are :
+input :	1
+do_task :	2
+The number of disks are as follows : 	3
+
+Sending handle to recursive function...
+Tower of hanoi solved by recursive approach in 0.000053 sec
+
+Sending handle to iterative function...
+Tower of hanoi solved by iterative approach in 0.000043 sec
+
