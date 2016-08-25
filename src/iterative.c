@@ -13,10 +13,11 @@ void iterative(int numOfDisks)
 	int i;
 
 	printf("Transferring disks using iterative method :\n");
-
+	//pushing data into source stack 
 	for(i=numOfDisks;i>=1;i--)
 		source = push(source,i);
 
+	//if number of disks id even then source and des are used first, if odd then source and aux are used first
 	if(numOfDisks%2 == 0)
 		diskMove(source,dest,aux,moves);
 	else
@@ -25,6 +26,7 @@ void iterative(int numOfDisks)
 	printf("\n\n");
 }
 
+//function to calculate power of a number
 long long int power(int a,int b)
 {
 	int i;
@@ -34,6 +36,7 @@ long long int power(int a,int b)
 	return powe;
 }
 
+//function to move the disks from source to destination
 void diskMove(stack *source,stack *aux,stack *dest,long long int moves)
 {
 	long long int i;
@@ -43,6 +46,7 @@ void diskMove(stack *source,stack *aux,stack *dest,long long int moves)
 	for(i=1;i<=moves;i++)
 		switch(i%3)
 		{
+			//in 1st,4th ,10th ,....3(n)+1 cases disk is exchanged b/w source and destination according to the rules
 		case 1:	if(empty(source))
 					temp = dest->data;
 				else if(empty(dest))
@@ -63,6 +67,7 @@ void diskMove(stack *source,stack *aux,stack *dest,long long int moves)
 				}
 				printf("[%3lld] Move disk %d from Peg %c -> %c\n",i,temp,s,d);
 			break;
+			//in 2nd,3rd ,4th ,....3(n)+2 cases disk is exchanged b/w source and auxiliary according to the rules
 		case 2:	if(empty(source))
 					temp = aux->data;
 				else if(empty(aux))
@@ -83,6 +88,7 @@ void diskMove(stack *source,stack *aux,stack *dest,long long int moves)
 				}
 				printf("[%3lld] Move disk %d from Peg %c -> %c\n",i,temp,s,d);
 			break;
+			////in 3rd,6th ,9th ,....3(n) cases disk is exchanged b/w auxiliary and destination according to the rules
 		case 0:	if(empty(dest))
 					temp = aux->data;
 				else if(empty(aux))
@@ -106,6 +112,8 @@ void diskMove(stack *source,stack *aux,stack *dest,long long int moves)
 		}
 }
 
+
+//function to exchange disk b/w stacks according to the rules of tower of hanoi
 int movement(stack **a,stack **b)
 {
 	int temp1,temp2;
