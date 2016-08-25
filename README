@@ -1,0 +1,29 @@
+##### TOWER OF HANOI #####
+
+The given program provides a solution to the very famous problem of tower of hanoi.
+In this problem,we have three towers/poles.There are blocks of different size piled on one of the pole/tower in ascending order from top. We have to shift the blocks from first pole to the third pole but only under the following conditions :
+
+1. Only one disk can be moved at a time.
+2. Each move consists of taking the upper disk from one of the stacks and
+placing it on top of another stack i.e. a disk can only be moved if it is the
+uppermost disk on a stack.
+3. No disk may be placed on top of a smaller disk.
+
+The minimum numbers of moves required is equal to (2^n)-1.
+
+For running the program, just run the executable file "TowerOfHanoi"
+	
+							OR
+
+You can also build the source code by just typing 'make' in ur terminal after moving into the parent directory of the package "Tower Of Hanoi".
+
+The problem is solved using two methods :
+
+1.Recursive (using implicit stack of function)
+2.Iterative (using explicit stack)
+
+For both the methods Time complexity coes out to be O(2^n).
+
+Space complexity for both methods is O(n).
+
+For supporting the iterative method I have used a header file that i made for using stacks easily.
